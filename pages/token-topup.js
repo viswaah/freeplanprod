@@ -1,9 +1,9 @@
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
-import { doc, getDoc, setDoc } from 'firebase/firestore';
-import { useIntl } from 'react-intl';
-import { AppLayout } from '../components/AppLayout';
-import { db } from '../firebase.config';
-import { getAppProps } from '../utils/getAppProps';
+import { withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { useIntl } from "react-intl";
+import { AppLayout } from "../components/AppLayout";
+import { db } from "../firebase.config";
+import { getAppProps } from "../utils/getAppProps";
 
 export default function TokenTopup() {
   const intl = useIntl();
@@ -11,9 +11,13 @@ export default function TokenTopup() {
   const getText = (id) => intl.formatMessage({ id });
 
   const handleClick = async () => {
-    console.log('add new token!')
+    console.log("add new token!");
     const result = await fetch(`/api/addTokens`, {
-      method: 'POST',
+      method: "POST",
+      body: JSON.stringify({ language: intl.locale }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
     const json = await result.json();
     window.location.href = json.session.url;
@@ -23,7 +27,7 @@ export default function TokenTopup() {
     <div>
       <h1></h1>
       <button className="btn" onClick={handleClick}>
-        {getText('topup.btn')}
+        {getText("topup.btn")}
       </button>
     </div>
   );
