@@ -100,13 +100,13 @@ export default function Itinerary(props) {
         {props.apiOutput && (
           <div className="output">
             <div className="output-content">
-              <p style={{ wordBreak: "break-all" }}>
+              <p style={{ wordBreak: "break-word" }}>
                 <Linkify componentDecorator={componentDecorator}>
                   {props.apiOutput}
                 </Linkify>
               </p>
               {props.info && (
-                <div style={{ fontWeight: "bold", color: "black", wordBreak: "break-all" }} className="xl:max-w-[1400px] lg:max-w-[1400px] max-w-[400px]">
+                <div style={{ fontWeight: "bold", color: "black", wordBreak: "break-word" }} className="xl:max-w-[1400px] lg:max-w-[1400px] max-w-[400px]">
                   <div dangerouslySetInnerHTML={{ __html: props.info }}></div>
                 </div>
               )}
