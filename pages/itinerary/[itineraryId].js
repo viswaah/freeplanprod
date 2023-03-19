@@ -106,7 +106,7 @@ export default function Itinerary(props) {
                 </Linkify>
               </p>
               {props.info && (
-                <div style={{ fontWeight: "bold", color: "black" }}>
+                <div style={{ fontWeight: "bold", color: "black", wordBreak: "break-all" }} className="xl:max-w-[1400px] lg:max-w-[1400px] max-w-[400px]">
                   <div dangerouslySetInnerHTML={{ __html: props.info }}></div>
                 </div>
               )}
