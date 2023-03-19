@@ -53,7 +53,7 @@ function MyApp({ Component, pageProps }) {
           </main>
         </ItinerariesProvider>
       </UserProvider>
-    </IntlProvider >
+    </IntlProvider>
   );
 }
 
