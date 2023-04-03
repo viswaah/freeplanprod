@@ -58,7 +58,7 @@ const NewItinerary = () => {
     e.preventDefault();
     setIsGenerating(true);
 
-    let prompt = `${getText('new.generateitineraryof')} ${duration} ${getText('new.generateitineraryto')} ${userInput} ${getText('new.generateitinerarynext')} ${selectedMonth}  ${getText('new.generateitineraryplan')}  ${getText('new.generateitineraryplan2')}  ${getText('new.generateitineraryplan3')}`;
+    let prompt = `${getText('new.generateitineraryof')} ${duration} ${getText('new.generateitineraryto')} ${userInput} ${getText('new.generateitinerarynext')} ${selectedMonth}`;
     console.log('THE prompt!!!', prompt);
 
     try {
