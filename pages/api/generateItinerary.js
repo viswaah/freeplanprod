@@ -65,14 +65,14 @@ export default withApiAuthRequired(async function handler(req, res) {
   const newItineraryId = String(new Date().getTime())
 
   // add itinerary to firestore
-  await setDoc(doc(db, "itineraries", newItineraryId), {
-    apiOutput: response,
-    info: finalContent,
-    title: `${req.body.userInput} - ${req.body.selectedMonth}`,
-    userId: `${user.sub}-${user.email}`,
-    created: new Date().toISOString(),
-    _id: newItineraryId
-  });
+  // await setDoc(doc(db, "itineraries", newItineraryId), {
+  //   apiOutput: response,
+  //   info: finalContent,
+  //   title: `${req.body.userInput} - ${req.body.selectedMonth}`,
+  //   userId: `${user.sub}-${user.email}`,
+  //   created: new Date().toISOString(),
+  //   _id: newItineraryId
+  // });
 
   res.status(200).json({
     itineraryId: newItineraryId,
