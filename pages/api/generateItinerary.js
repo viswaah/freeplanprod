@@ -30,6 +30,7 @@ export default withApiAuthRequired(async function handler(req, res) {
   }
 
   const configuration = new Configuration({
+    organization: 'org-MbcCMiLnIXBQOxkwLsQR4MZq',
     apiKey: process.env.OPENAI_API_KEY,
   })
   const openai = new OpenAIApi(configuration)
